@@ -5,17 +5,16 @@ class DosesController < ApplicationController
   end
 
   def create
-    if Dose.create(dose_params)
-      redirect_to cocktail_path(params[:cocktail_id].to_i)
-    else
-      render :new
-    end
+    Dose.create(dose_params)
+    redirect_to cocktail_path(params[:cocktail_id].to_i)
   end
 
   def destroy
-    @dose = Dose.find(params[:id])
-    @dose.destroy!
-    redirect_to cocktail_path
+    dose = Dose.find(params[:id])
+    dose.destroy!
+
+    cocktail_id = params[:cocktail_id].to_i
+    redirect_to cocktail_path(cocktail_id.to_i)
   end
 
   private
