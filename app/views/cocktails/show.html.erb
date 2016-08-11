@@ -9,7 +9,7 @@
       <p class="text-center"><u>Here's what goes into it</u></p>
       <% @cocktail.doses.each do |dose|%>
         <div class="text-center">
-          <%= dose.description + dose. %>
+          <%= dose.description %>
           <%= link_to "Delete", cocktail_dose_path(@cocktail, dose), method: :delete %>
         </div>
       <% end %>

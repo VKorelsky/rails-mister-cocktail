@@ -1,21 +1,15 @@
-<!-- TODOS
-     -> Cocktail padding
-     -> footer and header
--->
-<div class="wrapper bg-grey cover">
+
   <div class="container">
     <h1 class="text-center header">Cocktails</h1>
-      <% @cocktails.each do |cocktail| %>
-        <div class="cocktail text-center">
-          <%= link_to cocktail.name, cocktail_path(cocktail)%>
-        </div>
-        <br>
-      <% end %>
-
-    <!-- Make this a footer -->
-    <div class="text-center links">
-      <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-primary" %>
+    <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-sm-4 cocktail text-center padded">
+          <%= link_to cocktail.name.upcase, cocktail_path(cocktail)%>
+      </div>
+    <% end %>
+    </div>
+    <div class="text-center padded links">
+       <%= link_to "ADD A COCKTAIL", new_cocktail_path, class: "btn-impact" %>
     </div>
   </div>
-</div>
 

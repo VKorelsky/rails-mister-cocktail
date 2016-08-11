@@ -6,8 +6,8 @@
 
 // Paddings
 .padded {
-  padding-top: 5em;
-  padding-bottom: 5em;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 
 // Backgrounds
@@ -28,8 +28,8 @@
   background: white;
 }
 
-// Positioning
+//helpers
 
-.cover{
-  background-size: cover;
+.header{
+  margin-bottom: 50px;
 }
