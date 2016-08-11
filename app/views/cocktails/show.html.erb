@@ -1,12 +1,22 @@
-<h1 class="text-center"><%= @cocktail.name %></h1>
+<h1 class="text-center header"><%= @cocktail.name %></h1>
 
 <div class="container">
-  <h3><%= @cocktail.description %></h3>
+  <h3 class="text-center"><%= @cocktail.description %></h3>
   <div class="row">
-    <% @cocktail.doses.each do |dose|%>
-      <div class="col-xs-12 col-md-3">
-        <%= dose.description %>
-      </div>
+    <% if @cocktail.doses.empty? %>
+      <p class="text-center error"> No Doses yet!</p>
+    <% else  %>
+      <p class="text-center"><u>Here's what goes into it</u></p>
+      <% @cocktail.doses.each do |dose|%>
+        <div class="text-center">
+          <%= dose.description %>
+        </div>
+      <% end %>
     <% end %>
   </div>
+</div>
+
+<div class="text-center links">
+  <%= link_to "Edit Cocktail", edit_cocktail_path, class: "btn btn-primary" %>
+  <%= link_to "Add a Dose", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
 </div>
