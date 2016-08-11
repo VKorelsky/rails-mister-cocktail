@@ -2,21 +2,20 @@
      -> Cocktail padding
      -> footer and header
 -->
+<div class="wrapper bg-grey cover">
+  <div class="container">
+    <h1 class="text-center header">Cocktails</h1>
+      <% @cocktails.each do |cocktail| %>
+        <div class="cocktail text-center">
+          <%= link_to cocktail.name, cocktail_path(cocktail)%>
+        </div>
+        <br>
+      <% end %>
 
-<h1 class="text-center header">Cocktails</h1>
-
-<div class="container">
-  <% @cocktails.each do |cocktail| %>
-    <div class="cocktail text-center">
-      <%= link_to cocktail.name, cocktail_path(cocktail)%>
+    <!-- Make this a footer -->
+    <div class="text-center links">
+      <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-primary" %>
     </div>
-    <br>
-  <% end %>
+  </div>
 </div>
-
-<!-- Make this a footer -->
-<div class="text-center links">
-  <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-primary" %>
-</div>
-
 
