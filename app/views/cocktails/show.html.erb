@@ -20,7 +20,17 @@
 
 <div class="text-center links">
   <%= link_to "Edit Cocktail", edit_cocktail_path(@cocktail), class: "btn btn-primary" %>
+
   <%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
-  <%= link_to "Back", cocktails_path, class: "btn btn-primary" %>
-  <%= link_to "Destroy", cocktail_path(@cocktail), class: "btn btn-danger", method: :delete %>
+
+  <%= link_to cocktail_path(@cocktail), class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} do %>
+    <i class="fa fa-times" aria-hidden="true"></i>
+  <% end %>
 </div>
+
+<div class="text-center">
+  <%= link_to cocktails_path, class: "btn-back " do %>
+      <i class="fa fa-arrow-left" aria-hidden="true"></i>
+  <% end %>
+</div>
+
