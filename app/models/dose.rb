@@ -7,5 +7,5 @@ class Dose < ApplicationRecord
   validates :cocktail, presence: true
   validates :ingredient, presence: true
 
-  validates_uniqueness_of :cocktail, :scope => :ingredient
+  validates :cocktail, uniqueness: {scope: :ingredient, message: "This cocktail already has this ingredient"}
 end

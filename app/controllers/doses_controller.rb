@@ -5,9 +5,13 @@ class DosesController < ApplicationController
   end
 
   def create
-    raise
-    Dose.create(dose_params)
-    redirect_to cocktail_path(params[:cocktail_id].to_i)
+    @cocktail = Cocktail.find(params[:cocktail_id])
+    @dose = Dose.new(dose_params)
+    if @dose.save
+      redirect_to cocktail_path(params[:cocktail_id].to_i)
+    else
+      render :new
+    end
   end
 
   def destroy

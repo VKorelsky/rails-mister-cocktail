@@ -9,7 +9,8 @@
       <p class="text-center"><u>Here's what goes into it</u></p>
       <% @cocktail.doses.each do |dose|%>
         <div class="text-center">
-          <%= dose.description %>
+          <%= dose.description + " of " + dose.ingredient.name%>
+          <br>
           <%= link_to "Delete", cocktail_dose_path(@cocktail, dose), method: :delete %>
         </div>
       <% end %>
@@ -19,7 +20,7 @@
 
 <div class="text-center links">
   <%= link_to "Edit Cocktail", edit_cocktail_path(@cocktail), class: "btn btn-primary" %>
-  <%= link_to "Add a Dose", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+  <%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
   <%= link_to "Back", cocktails_path, class: "btn btn-primary" %>
   <%= link_to "Destroy", cocktail_path(@cocktail), class: "btn btn-danger", method: :delete %>
 </div>
