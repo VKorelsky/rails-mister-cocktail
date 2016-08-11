@@ -1,2 +1,21 @@
-<h1>Cocktails#index</h1>
-<p>Find me in app/views/cocktails/index.html.erb</p>
+<!-- TODOS
+     -> Cocktail padding
+     -> footer and header
+-->
+
+<h1 class="text-center">Cocktails</h1>
+
+<div class="container">
+  <% @cocktails.each do |cocktail| %>
+    <div class="cocktail text-center">
+      <%= link_to cocktail.name, cocktail_path(cocktail)%>
+    </div>
+  <% end %>
+</div>
+
+<!-- Make this a footer -->
+<div class="text-center">
+  <%= link_to "Add a cocktail", new_cocktail_path %>
+</div>
+
+
