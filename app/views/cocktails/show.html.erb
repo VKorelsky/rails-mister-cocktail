@@ -10,6 +10,7 @@
       <% @cocktail.doses.each do |dose|%>
         <div class="text-center">
           <%= dose.description %>
+          <%= link_to "Delete", dose_path(dose) %>
         </div>
       <% end %>
     <% end %>
