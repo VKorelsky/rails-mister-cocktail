@@ -10,7 +10,7 @@
       <% @cocktail.doses.each do |dose|%>
         <div class="text-center">
           <%= dose.description %>
-          <%= link_to "Delete", dose_path(dose) %>
+          <%= link_to "Delete", dose_path(dose), method: :delete %>
         </div>
       <% end %>
     <% end %>
@@ -20,4 +20,5 @@
 <div class="text-center links">
   <%= link_to "Edit Cocktail", edit_cocktail_path, class: "btn btn-primary" %>
   <%= link_to "Add a Dose", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+  <%= link_to "Back", cocktails_path, class: "btn btn-primary" %>
 </div>
