@@ -41,8 +41,9 @@ gem 'figaro'
 
 #file upload
 gem 'cloudinary', '1.1.0'
-# gem 'carrierwave'
-gem "attachinary", "1.3.1"
+gem 'carrierwave'
+gem "mini_magick"
+gem "fog-aws"
 gem "jquery-fileupload-rails"
 
 group :development, :test do
