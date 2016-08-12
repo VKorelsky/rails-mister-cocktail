@@ -1,15 +1,15 @@
-<div class="text-center">
-  <h1 class="header"><%= @cocktail.name %></h1>
-  <% if @cocktail.photo? %>
-     <%= image_tag @cocktail.photo.url, height: 300, width: 400, crop: :fill %>
-  <% end %>
-</div>
+<h1 class="header text-center"><%= @cocktail.name %></h1>
 
-<div class="container">
-  <h3 class="text-center"><%= @cocktail.description %></h3>
-  <div class="row">
+<div class="text-center">
+ <div class="row page-center">
+    <div class="col-xs-12 col-md-6">
+      <% if @cocktail.photo? %>
+        <%= image_tag @cocktail.photo.url, height: 300, width: 400, crop: :fill %>
+         <% end %>
+     </div>
+  <div class="col-xs-12 col-md-6 padded">
     <% if @cocktail.doses.empty? %>
-      <p class="text-center error"> No Doses yet!</p>
+      <p class="text-center error"> No Ingredients added yet!</p>
     <% else  %>
       <p class="text-center"><u>Here's what goes into it</u></p>
       <% @cocktail.doses.each do |dose|%>
@@ -21,7 +21,11 @@
       <% end %>
     <% end %>
   </div>
+ </div>
 </div>
+
+<h3 class="text-center"><%= @cocktail.description %></h3>
+
 
 <div class="text-center links">
   <%= link_to "Edit Cocktail", edit_cocktail_path(@cocktail), class: "btn btn-primary" %>
