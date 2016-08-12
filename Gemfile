@@ -41,7 +41,9 @@ gem 'figaro'
 
 #file upload
 gem 'cloudinary', '1.1.0'
-gem 'carrierwave'
+# gem 'carrierwave'
+gem "attachinary", "1.3.1"
+gem "jquery-fileupload-rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
