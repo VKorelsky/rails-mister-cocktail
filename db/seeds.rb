@@ -9,22 +9,21 @@
 ingredients = [
                 "Mint",
                 "Bitter",
-                "Ice",
+                "ice cubes",
+                "simple syrup",
+                "cruches icebergs",
+                "tonic",
                 "Whiskey",
                 "Rhum",
                 "Vodka",
-                "simple syrup",
                 "dry vermouth",
                 "wet vermouth",
-                "ice cubes",
-                "cruches icebergs",
                 "raspberry liqueur",
-                "ginger ale",
-                "tonic"
+                "ginger ale"
               ]
 
-ingredient_array.each do |ingredient|
-  Ingredient.create(ingredient)
+ingredients.each do |ingredient|
+  Ingredient.create(name: ingredient.capitalize)
 end
 
 
