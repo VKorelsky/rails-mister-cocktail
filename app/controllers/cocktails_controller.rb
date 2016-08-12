@@ -1,4 +1,9 @@
 class CocktailsController < ApplicationController
+
+  def initialize
+    @uploader = PhotoUploader.new
+  end
+
   def index
     @cocktails = Cocktail.all
   end
@@ -39,6 +44,6 @@ class CocktailsController < ApplicationController
   private
 
   def cocktail_params
-    params.require(:cocktail).permit(:name, :description, :photo)
+    params.require(:cocktail).permit(:name, :description, :photo, :photo_cache)
   end
 end
